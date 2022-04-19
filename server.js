@@ -1,18 +1,18 @@
-const { createServer } = require('http')
-const { parse } = require('url')
-const next = require('next')
+const { createServer } = require('http');
+const { parse } = require('url');
+const next = require('next');
 
-const dev = process.env.NODE_ENV !== 'production'
-const hostname = 'localhost'
-const port = 5000
+const dev = process.env.NODE_ENV !== 'production';
+const hostname = 'localhost';
+const port = process.env.PORT || 5000;
 // const port = !dev ? process.env.PORT : 3000;
 
 // Create the Express-Next App
 // When using middleware `hostname` and `port` must be provided below
 
 // const app = next({ dev, hostname, port })
-const app = next({ dev })
-const handle = app.getRequestHandler()
+const app = next({ dev });
+const handle = app.getRequestHandler();
 
 
 app.prepare().then(() => {
@@ -43,4 +43,4 @@ app.prepare().then(() => {
     // console.log(`> Ready on http://${hostname}:${port}`)
     console.log(`> App running on port ${port}.`);
   })
-})
+});
