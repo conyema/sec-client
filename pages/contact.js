@@ -4,7 +4,7 @@ import Map from '../components/Map'
 import Meta from '../components/Meta'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
-import mapImg from '../public/assets/images/map.jpg'
+import mapImg from '../public/assets/images/map.png'
 
 
 const Contact = ({ contact, map }) => {
