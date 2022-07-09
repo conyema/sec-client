@@ -4,8 +4,8 @@ import { FiTwitter } from 'react-icons/fi';
 import { BsTwitter } from 'react-icons/bs';
 import { FaLinkedinIn } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
-import { FaFacebookF } from 'react-icons/fa';
-import { GrFacebookOption } from 'react-icons/gr';
+// import { FaFacebookF } from 'react-icons/fa';
+// import { GrFacebookOption } from 'react-icons/gr';
 
 
 
@@ -33,12 +33,11 @@ const SocialList = ({ linkedin = "#", instagram = "#", facebook = "#", twitter =
           </a>
         </li>
 
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a className="link-icon" href={facebook} target="_blank" rel="noreferrer" title="Facebook">
-            {/* <FaFacebookF /> */}
             <GrFacebookOption className="m-1" />
           </a>
-        </li>
+        </li> */}
 
         <li className="nav-item">
           <a className="link-icon" href={twitter} target="_blank" rel="noreferrer" title="Twitter">

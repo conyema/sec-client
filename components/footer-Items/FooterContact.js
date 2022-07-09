@@ -10,10 +10,10 @@ const FooterContact = ({ address, email, phones }) => {
 
 
   return (
-    <>
+    <div>
       <h3 className="heading">Contact</h3>
 
-      <ul className="list-unstyled">
+      <ul className="list-unstyled lh-lg">
         <li>
           <address className="d-flex">
             <div className="d-flex align-items-center text-black-50">
@@ -23,7 +23,12 @@ const FooterContact = ({ address, email, phones }) => {
             </div>
             <p className="m-0">
               <span className="my-0 visually-hidden"> Office:</span>
-              <span className="nav-link">{address}</span>
+              {/* <span className="nav-link"> {address.line1} </span>
+              <span className="nav-link"> {address.line2} </span> */}
+              <span className="nav-link">
+                <span className="d-inline-block me-1"> {address.line1} </span>
+                <span className="d-inline-block"> {address.line2} </span>
+              </span>
             </p>
           </address>
         </li>
@@ -61,7 +66,7 @@ const FooterContact = ({ address, email, phones }) => {
           </address>
         </li>
       </ul>
-    </>
+    </div>
   )
 }
 

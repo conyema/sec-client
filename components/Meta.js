@@ -7,6 +7,7 @@ const Meta = ({ title, subTitle, keywords, description }) => {
     <Head>
       <meta name="keywords" content={keywords} />
       <meta name="description" content={description} />
+
       <link rel="icon" href="/favicon.ico" />
 
       {/* {subTitle

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import Wave from './svgs/Wave'
 import NavLink from '../components/NavLink'
 
@@ -30,13 +32,11 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* <div className="col overflow-hidden text-center">
-              <div className="carousel" id="hero-gallery" data-bs-ride="carousel">
-                <div className="card img-container m-auto animate__animated animate__fadeIn">
-                  <img className="img-fluid rounded" src="/assets/images/house.jpg" alt="" width="400" height="400" />
-                </div>
+            <div className="col">
+              <div className="animate__animated animate__fadeIn">
+                <Image className="img-fluid" src="/assets/images/hero-bg-2.png" alt="" layout='fill' />
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
 

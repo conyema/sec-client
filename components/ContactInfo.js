@@ -5,7 +5,14 @@ const ContactInfo = ({ address, email, phones, openHours }) => {
       <div className="row row-cols-1 g-4">
         <div className="col">
           <h4 className="heading heading"> Visit our office</h4>
-          <p> {address} </p>
+          <address>
+            {/* <p> {address.line1} </p>
+            <p> {address.line2} </p> */}
+            <p>
+              <span className="d-inline-block me-1"> {address.line1} </span>
+              <span className="d-inline-block"> {address.line2} </span>
+            </p>
+          </address>
         </div>
         <div className="col">
           <h4 className="heading"> Send a mail</h4>
@@ -25,7 +32,7 @@ const ContactInfo = ({ address, email, phones, openHours }) => {
           </ul>
         </div>
         <div className="col">
-          <h4 className="heading"> Opening Hours</h4>
+          <h4 className="heading"> Business Hours</h4>
           <table className="table table-borderless">
             <tbody>
               {openHours.map(({ day, time }, idx) => (

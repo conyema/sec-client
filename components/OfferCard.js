@@ -1,7 +1,9 @@
 import Image from 'next/image'
 
 import NavLink from '../components/NavLink'
-import ArrowRightSvg from './svgs/ArrowRightSvg'
+// import ArrowRightSvg from './svgs/ArrowRightSvg'
+
+import { MdOutlineArrowForwardIos } from 'react-icons/md'
 
 // import styles from '../styles/Home.module.css'
 
@@ -20,7 +22,7 @@ const OfferCard = ({ image, title, body, features, link }) => {
           <div className="d-flex justify-content-center p-3">
             {/* <div className="d-flex img-thumbnail theme-bg"> */}
             <div
-              className={`d-flex ${image.icon ? "img-fluid" : "img-thumbnail theme-bg"}`}
+              className={`d-flex ${image.icon ? "img-fluid" : "img-thumbnail"}`}
             >
               <Image
                 src={image.src}
@@ -66,7 +68,9 @@ const OfferCard = ({ image, title, body, features, link }) => {
             </NavLink> */}
             <NavLink href={link.href} className={"arrow-link"}>
               {link.text}
-              <span className="ms-1"><ArrowRightSvg /></span>
+              {/* <span className="ms-1"><ArrowRightSvg /></span> */}
+
+              <MdOutlineArrowForwardIos className="bi ms-1" />
             </NavLink>
           </div>
         }

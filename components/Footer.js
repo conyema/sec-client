@@ -28,12 +28,16 @@ const Footer = ({ title, brand, contact }) => {
         </div>
 
         {/* <SocialList /> */}
+        <a id="go-to-top" href="#main-content" className="accent-green" data-visible="true" title="Back to top">
+          <span className="visually-hidden btn-main p-1 small"> Back to top</span>
+          <GoTopSvg />
+        </a>
 
-        <hr />
+        <hr className="mt-0 mb-5" />
 
         <div className="row row-cols-1 row-cols-sm-2 muted text-sm-center mt-3">
           <div className="col">
-            <p><small>{`Copyright Ⓒ ${new Date().getFullYear()} ${title}`}</small></p>
+            <p><small>{`Ⓒ ${new Date().getFullYear()} ${title}`}</small></p>
           </div>
           <div className="col">
             <p>
@@ -45,10 +49,10 @@ const Footer = ({ title, brand, contact }) => {
             </p>
           </div>
         </div>
-        <a className="go-to-top-link btn p-1 btn-accent rounded-circle" id="go-to-top" href="#main-content" data-visible="true" title="Back to top">
+        {/* <a className="go-to-top-link btn p-1 btn-accent rounded-circle" id="go-to-top" href="#main-content" data-visible="true" title="Back to top">
           <span className="visually-hidden"> Back to top</span>
           <GoTopSvg />
-        </a>
+        </a> */}
       </div>
     </footer>
   )
@@ -57,17 +61,22 @@ const Footer = ({ title, brand, contact }) => {
 Footer.defaultProps = {
   title: "Stella Ebam Consulting",
   brand: {
-    // about: `We are a company committed to helping you make the best real estate development, investment and marketing decisions.`,
+    // about: `
+    //   We are a company committed to helping you make the best
+    //   real estate development, investment and marketing decisions.
+    // `,
     about: `
-        A registered property development, estate surveying and valuation 
-        company providing consulting services to the real estate industry, 
+        We provide consulting services to the real estate industry, 
         financial institutions and the public sector in Nigeria.
     `,
     // logo: "/assets/icons/sec_logo_dark.png",
     logo: "/assets/icons/logo_dark.png",
   },
   contact: {
-    address: "Plot 62, Bala Kona Street, Kado District, FCT Abuja",
+    address: {
+      line1: "Plot 62, Bala Kona Street, ",
+      line2: "Kado District, FCT Abuja."
+    },
     email: "contact@stellaebamconsulting.com",
     phones: ["+2348033533945", "+2347084111505"],
   },

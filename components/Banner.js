@@ -1,4 +1,5 @@
 import Wave from './svgs/Wave'
+import Valley from './svgs/Valley'
 
 
 const Banner = ({ title }) => {
@@ -10,8 +11,9 @@ const Banner = ({ title }) => {
         <h1 className="title">{title}</h1>
       </div>
 
-      <div className="wave-decoration">
-        <Wave />
+      <div className="banner-decor">
+        {/* <Wave /> */}
+        <Valley />
       </div>
     </section>
   )

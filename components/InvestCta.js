@@ -1,6 +1,5 @@
 import NavLink from './NavLink'
 import OfferCard from './OfferCard'
-import Section from './Section'
 
 
 const InvestCta = ({ offers }) => {
@@ -10,20 +9,19 @@ const InvestCta = ({ offers }) => {
     <section className="section cta-green" id="invest">
       <div className="container-fluid container-lg text-center">
         <div>
-          <h2 className="title">Work with us</h2>
+          <h2 className="title fs-1 accent-orange">Work with us</h2>
 
           {/* <p className="fs-4">
             Become our investment or sales partner today.
             Get the best return on your investments and time.
           </p> */}
           <p className="fs-4">
-
             Become our investment or sales partner today.
             Get the best return on your investments.
           </p>
 
         </div>
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 py-5 gy-5">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 py-5 gy-5">
           {hasOffer && offers.map((offer, idx) => (
             <div key={idx} className="col">
               <OfferCard {...offer} />
