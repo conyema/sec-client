@@ -3,10 +3,11 @@ import { useState, useEffect } from "react";
 // import Spinner from 'react-bootstrap/Spinner';
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
+import apiServer from '../config/index'
 
 import ProductList from '../components/product/ProductList'
 import Banner from '../components/Banner'
-import Section from '../components/Section'
+import PageSection from '../components/PageSection'
 import ContactCta from '../components/ContactCta'
 import Meta from '../components/Meta'
 import Loader from '../components/Loader'
@@ -27,9 +28,9 @@ const Properties = () => {
     }
 
     setLoading(true)
-    getProperties('https://stellaebamconsulting.com/api/v1/estates')
+    getProperties(`${apiServer}/estates`)
       .catch((err) => {
-        console.log(err.message)
+        // console.log(err.message)
         setLoading(false)
         return
       });
@@ -38,6 +39,10 @@ const Properties = () => {
 
   // if (isLoading) return <Spinner animation="border" variant="success" />
   // if (!properties) return <p>No Property</p>
+  if (isLoading) {
+    return <Loader message={'Fetching Property...'} />
+  }
+
 
   return (
     <>
@@ -53,15 +58,15 @@ const Properties = () => {
       </div>
 
 
-      <Section className={"section"} id={"properties"} title={"Find a home"}>
+      <PageSection className={"section"} id={"properties"} title={"Find a home"}>
 
-        {/* <ProductList products={properties} /> */}
+        <ProductList products={properties} />
 
-        {isLoading
+        {/* {isLoading
           ? <Loader message={'Fetching Properties...'} />
           : <ProductList products={properties} />
-        }
-      </Section>
+        } */}
+      </PageSection>
 
       <ContactCta />
     </>

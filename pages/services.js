@@ -1,6 +1,6 @@
 import Banner from '../components/Banner'
 import ContactCta from '../components/ContactCta'
-import Section from '../components/Section'
+import PageSection from '../components/PageSection'
 import Meta from '../components/Meta'
 import OfferCard from '../components/OfferCard'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
@@ -11,11 +11,11 @@ const Services = ({ services }) => {
 
   return (
     <div>
-      {/* <section className="Banner Banner-bg" id="Banner">
+      {/* <PageSection className="Banner Banner-bg" id="Banner">
         <div className="container-fluid container-lg text-center">
           <h1 className="title"><span className="sub-title"> Who we are</span></h1>
         </div>
-      </section> */}
+      </PageSection> */}
       <Meta subTitle="Services" />
       <Banner title={"What we offer"} />
 
@@ -26,7 +26,7 @@ const Services = ({ services }) => {
         </Breadcrumb>
       </div>
 
-      <Section className={"section"} id={"services"} title={"Our Expertise"} >
+      <PageSection className={"section"} id={"services"} title={"Our Expertise"} >
         <p className="fs-5 py-5 ps-2">
           Our professional services cover the stages of the property development
           from research and feasibility studies to marketing and sales management,
@@ -42,12 +42,12 @@ const Services = ({ services }) => {
         </div>
 
 
-      </Section>
+      </PageSection>
 
       <ContactCta />
-      {/* <Section className={"section"} id={"services"} title={"Find a home"} >
+      {/* <PageSection className={"section"} id={"services"} title={"Find a home"} >
 
-      </Section> */}
+      </PageSection> */}
 
     </div>
   )

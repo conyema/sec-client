@@ -1,8 +1,8 @@
 import Banner from '../components/Banner'
 import ContactCta from '../components/ContactCta'
 import Meta from '../components/Meta'
-import NavLink from '../components/NavLink'
-import Section from '../components/Section'
+// import NavLink from '../components/NavLink'
+import PageSection from '../components/PageSection'
 import Breadcrumb from 'react-bootstrap/Breadcrumb'
 
 
@@ -19,7 +19,7 @@ const About = () => {
         </Breadcrumb>
       </div>
 
-      <Section className={"section"} id={"about-us"}>
+      <PageSection className={"section"} id={"about-us"}>
         <div className="lh-lg fs-5 p-2 pb-5">
           <p>
             Stella Ebam consulting is a registered property development, estate
@@ -37,7 +37,7 @@ const About = () => {
 
 
           <div className="mt-5">
-            <h2 className="heading">Our Mission</h2>
+            <h2 className="heading text-center">Our Mission</h2>
             <p>
               Our goal is to deliver quality housing on time without compromising standards,
               thus ensuring that our clients are always satisfied and get the best return on
@@ -52,7 +52,7 @@ const About = () => {
           </p> */}
 
         </div>
-      </Section>
+      </PageSection>
 
       <ContactCta />
 
