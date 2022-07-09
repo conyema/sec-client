@@ -1,4 +1,6 @@
 // import Link from 'next/link'
+import { useRouter } from 'next/router';
+
 import NavLink from '../NavLink'
 import SocialList from '../SocialList'
 // import MenuBtnSvg from './svgs/MenuBtnSvg'
@@ -10,6 +12,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas'
 
 // const MobileNav = ({ show, handleClose, toggleShow }) => {
 const MobileNav = ({ show, handleClose }) => {
+  const router = useRouter();
 
 
   return (
@@ -27,6 +30,7 @@ const MobileNav = ({ show, handleClose }) => {
                 height="50"
               />
             </div>
+
           </NavLink>
 
           <button className="navbar-toggler shadow-none" type="button" aria-label="Close Menu" title="Close Menu" onClick={handleClose}>
@@ -36,21 +40,46 @@ const MobileNav = ({ show, handleClose }) => {
 
         <div className="offcanvas-body">
           <nav>
-            <ul className="navbar-nav">
+            <ul className="navbar-nav lh-lg">
               <li className="nav-item">
-                <NavLink className="sidebar-link" href="/">Home</NavLink>
+                <NavLink
+                  className={`sidebar-link ${router.pathname == "/" ? "active" : ""}`}
+                  href="/"
+                >
+                  Home
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="sidebar-link" href="/about">About</NavLink>
+                <NavLink
+                  className={`sidebar-link ${router.pathname == "/about" ? "active" : ""}`}
+                  href="/about"
+                >
+                  About
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="sidebar-link" href="/services">Services</NavLink>
+                <NavLink
+                  className={`sidebar-link ${router.pathname == "/services" ? "active" : ""}`}
+                  href="/services"
+                >
+                  Services
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="sidebar-link" href="/properties">Properties</NavLink>
+                <NavLink
+                  className={`sidebar-link ${router.pathname == "/properties" ? "active" : ""}`}
+                  href="/properties"
+                >
+                  Properties
+                </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="sidebar-link" href="/contact">Contact</NavLink>
+                <NavLink
+                  className={`sidebar-link ${router.pathname == "/contact" ? "active" : ""}`}
+                  href="/contact"
+                >
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </nav>

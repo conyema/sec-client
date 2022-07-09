@@ -1,5 +1,6 @@
 // import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 // import { MdAccountCircle } from 'react-icons/md';
 import NavLink from '../NavLink'
@@ -18,6 +19,7 @@ const TopNav = () => {
   // const handleShow = () => setShow(true);
   const toggleShow = () => setShow((s) => !s);
 
+  const router = useRouter();
 
   return (
     <>
@@ -33,25 +35,51 @@ const TopNav = () => {
             width="150"
             height="50"
           />
+
         </NavLink>
 
         {/* Navigation */}
         <div className="collapse navbar-collapse justify-content-end" id="nav-menu">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link header-link" href="/">Home</NavLink>
+              <NavLink
+                className={`nav-link header-link ${router.pathname == "/" ? "active" : ""}`}
+                href="/"
+              >
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link header-link" href="/about">About</NavLink>
+              <NavLink
+                className={`nav-link header-link ${router.pathname == "/about" ? "active" : ""}`}
+                href="/about"
+              >
+                About
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link header-link" href="/services">Services</NavLink>
+              <NavLink
+                className={`nav-link header-link ${router.pathname == "/services" ? "active" : ""}`}
+                href="/services"
+              >
+                Services
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link header-link" href="/properties">Properties</NavLink>
+              <NavLink
+                className={`nav-link header-link ${router.pathname == "/properties" ? "active" : ""}`}
+                href="/properties"
+              >
+                Properties
+              </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link header-link" href="/contact">Contact</NavLink>
+              <NavLink
+                className={`nav-link header-link ${router.pathname == "/contact" ? "active" : ""}`}
+                href="/contact"
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
