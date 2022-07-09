@@ -1,11 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
+import Error from 'next/error'
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router'
 
+import apiServer from '../../../config/index'
 
 import ProductDetails from "../../../components/product/ProductDetails";
-import NavLink from '../../../components/NavLink'
-import Banner from '../../../components/Banner'
+// import NavLink from '../../../components/NavLink'
+// import Banner from '../../../components/Banner'
 import Loader from '../../../components/Loader'
 
 
@@ -26,29 +28,37 @@ const PropertyView = () => {
   // }
 
   const [property, setProperty] = useState(null)
+  const [errorCode, setErrorCode] = useState(false)
   const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     async function getProperty(url) {
       const response = await fetch(url);
+      const errorCode = response.ok ? false : response.status;
       const { data } = await response.json();
-      console.log(data);
+      // console.log('err', errorCode, response);
+      // console.log('dat', data);
 
       setProperty(data)
+      setErrorCode(errorCode)
       setLoading(false)
     }
 
     if (id) {
       setLoading(true)
-      getProperty(`https://stellaebamconsulting.com/api/v1/estates/${id}`)
+      getProperty(`${apiServer}/estates/${id}`)
         .catch((err) => {
-          console.log(err.message)
+          // console.log('err', err.message)
           setLoading(false)
           return
         });
     }
 
   }, [id])
+
+  if (errorCode) {
+    return <Error statusCode={errorCode} />
+  }
 
   if (isLoading || !property) {
     return <Loader message={'Fetching Property...'} />
