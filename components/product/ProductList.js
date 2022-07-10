@@ -1,4 +1,3 @@
-import ProductItem from './ProductItem'
 import ProductCard from './ProductCard'
 
 
